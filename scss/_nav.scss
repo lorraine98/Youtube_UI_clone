@@ -1,0 +1,28 @@
+@import "./mixins";
+
+.nav {
+  margin-top: 60px;
+  margin-right: 10px;
+  display: inline-block;
+  width: 250px;
+  height: 100vh;
+  &__item {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    transition: background-color 0.3s;
+    &:hover {
+      @include color;
+      background-color: var(--gray);
+    }
+    & span:first-child {
+      padding-right: 15px;
+    }
+  }
+}
+
+footer {
+  @include color;
+  padding: 12px;
+  color: var(--gray);
+}

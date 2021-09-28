@@ -3,3 +3,7 @@
   justify-content: center;
   align-items: center;
 }
+
+@mixin color {
+  --gray: rgba(128, 128, 128, 0.5);
+}

@@ -2,4 +2,20 @@
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons+Outlined");
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
-@import "./header";
+@import "./mixins";
+@import "./_header";
+@import "./_nav";
+@import "./_contents";
+
+* {
+  box-sizing: border-box;
+}
+
+.line {
+  @include color;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--gray);
+}
+main {
+  display: flex;
+}

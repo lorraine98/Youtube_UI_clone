@@ -1,0 +1,55 @@
+@use "sass:map";
+
+$img: (
+  1: "http://i3.ytimg.com/vi/57bq77WnTIU/maxresdefault.jpg",
+  2: "http://i3.ytimg.com/vi/53QMxG7EHNY/maxresdefault.jpg",
+  3: "http://i3.ytimg.com/vi/CLhgj7rtc8E/maxresdefault.jpg",
+  4: "http://i3.ytimg.com/vi/-TjKp89KKZw/maxresdefault.jpg",
+  5: "http://i3.ytimg.com/vi/xrqfhaCnFV8/maxresdefault.jpg",
+  6: "http://i3.ytimg.com/vi/ufupPuN8VVw/maxresdefault.jpg",
+  7: "http://i3.ytimg.com/vi/GbOk741OcRw/maxresdefault.jpg",
+);
+
+$gif: (
+  1: "/img/gif01.webp",
+  2: "/img/gif02.webp",
+  3: "/img/gif03.webp",
+  4: "/img/gif04.webp",
+  5: "/img/gif05.webp",
+  6: "/img/gif06.webp",
+  7: "/img/gif07.webp",
+);
+
+.contents-section {
+  width: 100%;
+}
+.contents {
+  margin-top: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  transform: translateX(40px);
+}
+.content {
+  margin: 10px;
+  width: 320px;
+  img {
+    height: 180px;
+  }
+  &__title,
+  &__info {
+    padding-top: 10px;
+  }
+  @for $i from 1 through 7 {
+    &:nth-of-type(#{$i}) .content__img {
+      width: 320px;
+      height: 180px;
+      background-size: cover;
+      $imgUrl: map.get($img, $i);
+      $gifUrl: map.get($gif, $i);
+      background-image: url($imgUrl);
+      &:hover {
+        background-image: url($gifUrl);
+      }
+    }
+  }
+}
